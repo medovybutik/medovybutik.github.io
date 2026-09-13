@@ -115,25 +115,27 @@
 <!-- КАРТОЧКА №4 -->
 <div class="deck-card">
 
-    <!-- Добавили класс zoom-card-block, чтобы зафиксировать миниатюры на ПК -->
     <div class="deck-img-block zoom-card-block">
-        <div class="zoom-hint">⛶</div>
-        <!-- Главная большая фотография улья -->
-        <img src="foto-vulyky/vul3.jpg" alt="Колода с ракурсами" class="deck-img" 
+    <!-- 1. Главная большая фотография улья -->
+    <img src="foto-vulyky/vul3.jpg" alt="Колода с ракурсами" class="deck-img" 
+         onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
+    
+    <!-- 2. Кнопка иконки зума (теперь она привязана строго к фото) -->
+    <div class="zoom-hint" onclick="document.getElementById('zoom-img-vul4').src=document.querySelector('.zoom-card-block .deck-img').src; document.getElementById('open-vul4').classList.add('active')">⛶</div>
+    
+    <!-- 3. Ряд из 3 миниатюр -->
+    <div class="deck-thumbnails">
+        <img src="foto-vulyky/vul4.jpg" alt="Ракурс 1" class="deck-thumb-item" 
              onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-        
-        <!-- Ряд из 3 миниатюр -->
-        <div class="deck-thumbnails">
-            <img src="foto-vulyky/vul4.jpg" alt="Ракурс 1" class="deck-thumb-item" 
-                 onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-                 
-            <img src="foto-vulyky/vul5.jpg" alt="Ракурс 2" class="deck-thumb-item" 
-                 onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-                 
-            <img src="foto-vulyky/vul6.jpg" alt="Ракурс 3" class="deck-thumb-item" 
-                 onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-        </div>
+             
+        <img src="foto-vulyky/vul5.jpg" alt="Ракурс 2" class="deck-thumb-item" 
+             onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
+             
+        <img src="foto-vulyky/vul6.jpg" alt="Ракурс 3" class="deck-thumb-item" 
+             onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
     </div>
+</div>
+
 
     <div class="deck-info-block">
         <h3>Матусіна Колода</h3>
