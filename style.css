@@ -993,7 +993,7 @@ body.no-scroll {
     /* 4. ИСПРАВЛЕННАЯ КАРТИНКА: Теперь она узкая и длинная (вертикальная) */
     .deck-img {
         width: 200px !important;       /* ⬅️ МЕНЯЙ ТУТ ШИРИНУ: Сделали её узкой, чтобы улей не растягивался вширь */
-        height: 280px !important;      /* ⬅️ МЕНЯЙ ТУТ ВЫСОТУ: Сделали её вытянутой вверх (вертикальной) */
+        height: 270px !important;      /* ⬅️ МЕНЯЙ ТУТ ВЫСОТУ: Сделали её вытянутой вверх (вертикальной) */
         object-fit: cover !important;  /* Аккуратно заполняет новые вытянутые пропорции */
         border-radius: 12px !important;
         margin: 0 auto !important;
@@ -1058,4 +1058,28 @@ body.no-scroll {
         margin-top: auto !important;
         text-align: center !important;
     }
+
+
+    /* Новый контейнер-оболочка для большой картинки на смартфонах */
+    .deck-main-img-wrapper {
+        position: relative !important; /* Делаем этот блок главной базой для кнопки ⛶ */
+        width: 200px !important;       /* Ширина в точности равна ширине большой картинки */
+        height: 280px !important;      /* Высота в точности равна высоте большой картинки */
+        margin: 0 auto !important;     /* Центрируем блок по центру белой карточки */
+    }
+
+    /* ИДЕАЛЬНОЕ положение иконки ⛶ на телефонах: теперь она отсчитывает пиксели строго от краев БОЛЬШОГО фото */
+    .deck-img-block .deck-main-img-wrapper .zoom-hint {
+        position: absolute !important;
+        bottom: 10px !important; /* Отступаем всего 10px от нижнего края большой фотографии */
+        right: 10px !important;  /* Отступаем всего 10px от правого края большой фотографии */
+        top: auto !important;
+        left: auto !important;
+        z-index: 10 !important;
+    }
+
+
+
+
 }
+
