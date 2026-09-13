@@ -1035,7 +1035,7 @@ body.no-scroll {
     }
 
     .deck-card h3 {
-        font-size: 1.3rem !important;
+        font-size: 1.1rem !important;
         margin: 5px 0 10px 0 !important;
         text-align: center !important;
     }
@@ -1076,6 +1076,26 @@ body.no-scroll {
         top: auto !important;
         left: auto !important;
         z-index: 10 !important;
+    }
+
+
+    .deck-card .product-size {
+        font-size: 0.85rem !important; /* ⬅️ МЕНЯЙ ТУТ: размер букв на смартфонах */
+        padding: 5px 6px !important;   /* ⬅️ МЕНЯЙ ТУТ: первая цифра — толщина плашки сверху/снизу, вторая — по бокам */
+        margin-bottom: 10px !important; /* Отступ снизу от плашки до блока цен */
+    }
+
+
+    /* 1. Уменьшаем размер текста всего списка цен */
+    .price-option-item {
+        font-size: 0.9rem !important; /* ⬅️ МЕНЯЙ ТУТ: размер букв комплектации (было 1.05rem) */
+    }
+
+    /* 2. Настраиваем размер самих плашечек с цифрами цен справа */
+    .price-option-item .option-value {
+        font-size: 0.85rem !important; /* ⬅️ МЕНЯЙ ТУТ: размер цифр внутри плашки */
+        padding: 2px 6px !important;    /* ⬅️ ТОЛЩИНА ПЛАШКИ: первая цифра — верх/низ, вторая — право/лево */
+        border-radius: 5px !important;  /* Скругление уголков плашки с ценой */
     }
 
 
