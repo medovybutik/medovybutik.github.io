@@ -1083,3 +1083,51 @@ body.no-scroll {
 
 }
 
+
+
+/* ==========================================================
+   🎯 ЖЕСТКАЯ ФИКСАЦИЯ КНОПКИ ЗУМА ДЛЯ КАРТОЧКИ №4
+   ========================================================== */
+
+/* Базовый контейнер для большой фотографии */
+.deck-main-img-wrapper {
+    position: relative !important;
+    width: 200px !important;
+    height: 280px !important;
+    margin: 0 auto !important;
+}
+
+/* Стили новой кнопки (копия твоей красивой плашки зума) */
+.zoom-hint-v4 {
+    position: absolute !important;
+    bottom: 12px !important; /* Отступ строго от низа большой фотографии */
+    right: 12px !important;  /* Отступ строго от правого края большой фотографии */
+    top: auto !important;
+    left: auto !important;
+    background-color: rgba(0, 0, 0, 0.65) !important;
+    color: #ffffff !important;
+    font-size: 0.8rem !important;
+    font-weight: bold !important;
+    padding: 6px 12px !important;
+    border-radius: 20px !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+    z-index: 99 !important;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+/* Эффект нажатия пальцем */
+.zoom-hint-v4:active {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    transform: scale(0.95) !important;
+}
+
+/* Скрываем эту кнопку на компьютерах, так как там лайтбокс открывается по клику на фото */
+@media (min-width: 769px) {
+    .zoom-hint-v4 {
+        display: none !important;
+    }
+}
