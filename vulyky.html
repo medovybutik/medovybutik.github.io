@@ -20,45 +20,113 @@
 
 
          <!-- 👇 НОВЫЙ БЛОК С ИНФОРМАЦИЕЙ 👇 -->
-        <div class="info-svichky">
+        <div class="info-vulyky">
             <p> Традиційні колоди для вашої пасіки</p>
             <p> Створюють ідеальний мікроклімат та природні умови для здорового життя бджолиних сімей.</p>
             <p> Прекрасний вибір для спостереження за бджолами, відпочинку душі та збору екологічного меду.</p>
+
         </div>
 
 
 
-          <!-- КАРТОЧКА 1 -->
-<div class="deck-card">
-    <div class="deck-img-block">
-        <!-- Клик по фото открывает лайтбокс open-vul1 -->
-        <img src="foto-vulyky/vul1.jpg" alt="Колода для душі" class="deck-img" onclick="document.getElementById('open-vul1').classList.add('active')">
-        
-        <!-- 👇 ПЛАШКА-ПОДСКАЗКА ДЛЯ СМАРТФОНОВ 👇 -->
-        <div class="zoom-hint" onclick="document.getElementById('open-vul1').classList.add('active')">⛶</div>
-    </div>
-    
-    <div class="deck-info-block">
-        <h3>Колода для душі</h3>
-        
-        <div class="deck-desc">
-            <p>Оглядова колода без рамок. У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</p>
-            
-            <ul class="deck-features">
-                <li>- Колода має два оглядові віконця зі склом для спостереження за життям бджіл та треті дверцята для вилучення меду.</li>
-                <li>- У комплекті з колодою - дерев’яна підставка.</li>
-            </ul>
-            <p class="product-size">Висота виробу: 2 м 30 см</p>
-        </div>
-        
-        <div class="deck-price">38 000 ₴</div>
-    </div>
-</div>
+          <!-- ОДИН ОБЩИЙ КОНТЕЙНЕР ДЛЯ ВСЕХ КОЛОД — ОТКРЫВАЕТСЯ ТУТ -->
+<div class="deck-container">
 
-<!-- ОКНО УВЕЛИЧЕННОЙ КАРТИНКИ -->
+    <!-- КАРТОЧКА №1 (VUL1) -->
+    <div class="deck-card">
+        <div class="deck-img-block">
+            <!-- Ссылка открывает лайтбокс именно для первого улика -->
+            <a href="javascript:void(0)" onclick="document.getElementById('open-vul1').classList.add('active');">
+                <img src="foto-vulyky/vul1.jpg" class="deck-img" alt="Колода для душі">
+            </a>
+            <div class="zoom-hint">⛶</div>
+        </div>
+
+        <div class="deck-info-block">
+            <h3>Колода для душі</h3>
+            <div class="deck-desc">
+                <p>Оглядова колода без рамок. У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</p>
+                <ul class="deck-features">
+                    <li>- Колода має два оглядові віконця зі склом для спостереження за життям бджіл та треті дверцята для вилучення меду.</li>
+                    <li>- У комплекті з колодою - дерев’яна підставка.</li>
+                </ul>
+                <p class="product-size">Висота виробу: 2 м 30 см</p>
+            </div>
+            <div class="deck-price">38 000 ₴</div>
+        </div>
+    </div>
+
+
+
+
+
+ <!-- КАРТОЧКА №2 (VUL2) — ОНА ИДЕТ СРАЗУ СЛЕДОМ -->
+    <div class="deck-card">
+        <div class="deck-img-block">
+            <!-- Ссылка открывает лайтбокс именно для второго улика -->
+            <a href="javascript:void(0)" onclick="document.getElementById('open-vul2').classList.add('active');">
+                <img src="foto-vulyky/vul2.jpg" class="deck-img" alt="Колода для душі">
+            </a>
+            <div class="zoom-hint">⛶</div>
+        </div>
+
+       <div class="deck-info-block">
+            <h3>Колода з дверцятами</h3>
+            <div class="deck-desc">
+                <p>Колода з одними дверцятами на дерев’яній підставці.</p>
+                <ul class="deck-features">
+                    <li>- У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</li>
+                </ul>
+                <p class="product-size">Висота виробу: 2 м 50 см</p>
+            </div>
+            <div class="deck-price">30 000 ₴</div>
+        </div>
+    </div>
+
+
+
+    <!-- КАРТОЧКА №3 -->
+    <div class="deck-card">
+        <div class="deck-img-block">
+
+            <a href="javascript:void(0)" onclick="document.getElementById('open-vul3').classList.add('active');">
+                <img src="foto-vulyky/vul3.jpg" class="deck-img" alt="Колода для душі">
+            </a>
+            <div class="zoom-hint">⛶</div>
+        </div>
+
+       <div class="deck-info-block">
+            <h3>Матусіна Колода</h3>
+            <div class="deck-desc">
+                <p>Оглядова колода з підставкою та ковпаком - повний комплект.</p>
+                <ul class="deck-features">
+                    <li>- Колода має два оглядові віконця зі склом для спостереження за життям бджіл та треті дверцята для вилучення меду.</li>
+                    <li>- У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</li>
+                </ul>
+                <p class="product-size">Висота виробу: 1 м 60 см</p>
+            </div>
+            <div class="deck-price">25 000 ₴</div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+</div> <!-- ОБЩИЙ КОНТЕЙНЕР ДЛЯ ВСЕХ КОЛОД — ЗАКРЫВАЕТСЯ СТРОГО ТУТ -->
+
+
+
+
+<!-- ========================================== -->
+<!-- ОКНА УВЕЛИЧЕННЫХ КАРТИНОК (ВЫНЕСЕНЫ ИЗ СЕТКИ) -->
+<!-- ========================================== -->
+
+<!-- ЛАЙТБОКС ДЛЯ УЛИКА №1 -->
 <div id="open-vul1" class="lightbox">
     <a href="javascript:void(0)" class="lightbox-close" onclick="document.getElementById('open-vul1').classList.remove('active'); resetZoom('zoom-img-vul1')"></a>
-    
     <div class="lightbox-content">
         <div class="zoom-container">
             <img src="foto-vulyky/vul1.jpg" alt="Крупный просмотр" id="zoom-img-vul1" class="zoomable-img"
@@ -68,10 +136,43 @@
                  onmouseup="endDrag(this)" 
                  onmouseleave="endDrag(this)">
         </div>
-        <!-- Кнопка-крестик -->
         <a href="javascript:void(0)" class="lightbox-btn-close" onclick="document.getElementById('open-vul1').classList.remove('active'); resetZoom('zoom-img-vul1')">✕</a>
     </div>
 </div>
+
+<!-- ЛАЙТБОКС ДЛЯ УЛИКА №2 -->
+<div id="open-vul2" class="lightbox">
+    <a href="javascript:void(0)" class="lightbox-close" onclick="document.getElementById('open-vul2').classList.remove('active'); resetZoom('zoom-img-vul2')"></a>
+    <div class="lightbox-content">
+        <div class="zoom-container">
+            <img src="foto-vulyky/vul2.jpg" alt="Крупный просмотр" id="zoom-img-vul2" class="zoomable-img"
+                 onwheel="zoomImage(event, this)" 
+                 onmousedown="startDrag(event, this)" 
+                 onmousemove="dragImage(event, this)" 
+                 onmouseup="endDrag(this)" 
+                 onmouseleave="endDrag(this)">
+        </div>
+        <a href="javascript:void(0)" class="lightbox-btn-close" onclick="document.getElementById('open-vul2').classList.remove('active'); resetZoom('zoom-img-vul2')">✕</a>
+    </div>
+</div>
+
+
+<!-- ЛАЙТБОКС ДЛЯ УЛИКА №3 -->
+<div id="open-vul3" class="lightbox">
+    <a href="javascript:void(0)" class="lightbox-close" onclick="document.getElementById('open-vul3').classList.remove('active'); resetZoom('zoom-img-vul3')"></a>
+    <div class="lightbox-content">
+        <div class="zoom-container">
+            <img src="foto-vulyky/vul3.jpg" alt="Крупный просмотр" id="zoom-img-vul3" class="zoomable-img"
+                 onwheel="zoomImage(event, this)" 
+                 onmousedown="startDrag(event, this)" 
+                 onmousemove="dragImage(event, this)" 
+                 onmouseup="endDrag(this)" 
+                 onmouseleave="endDrag(this)">
+        </div>
+        <a href="javascript:void(0)" class="lightbox-btn-close" onclick="document.getElementById('open-vul3').classList.remove('active'); resetZoom('zoom-img-vul3')">✕</a>
+    </div>
+</div>
+
 
 
 

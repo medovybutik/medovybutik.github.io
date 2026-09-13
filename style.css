@@ -639,13 +639,16 @@ body.no-scroll {
 
 /* --- СПЕЦИАЛЬНЫЕ КАРТОЧКИ ДЛЯ КОЛОД --- */
 
-/* Контейнер идет сверху вниз, а не сеткой */
+/* Специальный контейнер для колод — теперь сетка! */
 .deck-container {
     display: flex;
-    flex-direction: column;
-    gap: 30px; /* Отступ между колодами */
-    max-width: 900px; /* Ограничиваем ширину, чтобы текст не размазывался по экрану */
-    margin: 30px auto;
+    flex-direction: row;      /* Выстраиваем карточки в ряд */
+    flex-wrap: wrap;          /* Разрешаем перенос на следующую строку */
+    justify-content: center;  /* Центрируем всю сетку на экране */
+    gap: 25px;                /* Расстояние между карточками */
+    max-width: 1600px;        /* Ограничиваем максимальную ширину всей сетки */
+    width: 100%;              /* Занимаем всю доступную ширину */
+    margin: 30px auto;        /* Центрируем контейнер на странице */
     padding: 0 20px;
     box-sizing: border-box;
 }
@@ -653,36 +656,57 @@ body.no-scroll {
 /* Сама карточка (Компьютерная версия: фото слева, текст справа) */
 .deck-card {
     display: flex;
-    background-color: rgba(253, 247, 237, 0.95); /* Ваша фирменная светлая подложка */
+    background-color: rgba(253, 247, 237, 0.95); 
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     box-sizing: border-box;
-    text-align: left; /* Текст выравниваем по левому краю для удобства чтения */
+    text-align: left; 
+
+    /* 👇 КРИТИЧЕСКИЕ ИЗМЕНЕНИЯ ДЛЯ ВЫРАВНИВАНИЯ ПО 2 В РЯД 👇 */
+    flex: 1 1 calc(50% - 25px); /* Говорим браузеру: "Занимай ровно половину строки с учетом отступа" */
+    min-width: 450px;           /* Минимальная ширина, чтобы карточка не сжималась слишком сильно */
+    max-width: 870px;           /* Максимальная ширина, чтобы карточки не растягивались на весь экран, если их всего две */
+    margin: 0;                  /* Сбрасываем центрирование одиночной карточки */
 }
 
-/* Блок для фотографии */
+/* Блок для фотографии внутри карточки */
 .deck-img-block {
-    flex: 0 0 350px; /* Фиксированная ширина фото на ПК */
-    background-color: #fcfaf7;
+    flex: 0 0 220px;            /* 👇 Уменьшили ширину фотоблока с 280px до 220px, чтобы тексту справа было просторнее 👇 */
+    box-sizing: border-box;
+    position: relative;    
+    display: flex;
+    align-items: center;   
+    justify-content: center;
+    padding: 20px 10px 20px 20px; 
 }
+
+
+
 
 .deck-img {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Красиво заполняет блок */
+    height: 320px;         /* 🌟 Фиксированная высота картинки (подгоните под себя, 320px — отлично для пропорций) */
+    object-fit: cover;     /* Картинка аккуратно заполняет свои размеры без искажений */
+    
+    border-radius: 12px;   /* Закругляем уголки у самой фотографии */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05); /* Легкая, почти незаметная тень для объема */
+    
     display: block;
     cursor: pointer;
 }
 
+
+
 /* Блок с текстом */
 .deck-info-block {
-    padding: 25px;
+    padding: 20px 20px 20px 10px; /* Мягкие отступы вокруг текста */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Прижимает цену к низу */
+    justify-content: space-between;
     flex-grow: 1;
 }
+
 
 .deck-card h3 {
     color: #33251c;
@@ -693,7 +717,7 @@ body.no-scroll {
 
 .deck-desc {
     color: #66554c;
-    font-size: 1.1rem;
+    font-size: 1.0rem;
     line-height: 1.6;
     margin-bottom: 25px;
 }
