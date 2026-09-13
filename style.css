@@ -751,73 +751,6 @@ body.no-scroll {
 
 
 
-/* ==========================================================
-   📱 АДАПТАЦИЯ ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ (Перестраиваем в один столбец)
-   ========================================================== */
-@media (max-width: 768px) {
-    .deck-container {
-        gap: 20px;
-        padding: 0 10px;
-    }
-
-    .deck-card {
-        flex-direction: column; /* На телефоне: фото сверху, текст снизу */
-        text-align: center; /* Центрируем заголовки и цену */
-        
-       
-        flex: 1 1 100%;
-        min-width: 0 !important;  /* Сбрасываем жесткое ограничение в 450px, чтобы карточка сжималась под экран */
-        max-width: 400px;         /* Ограничиваем ширину, чтобы на больших смартфонах карточка не выглядела слишком огромной */
-        margin: 0 auto;           /* Центрируем карточку ровно посередине экрана телефона */
-    }
-
-    .deck-img-block {
-        flex: none;
-        width: 100%;
-        max-height: 350px; /* Чтобы высокое фото не занимало весь экран телефона */
-        overflow: hidden;
-        padding: 15px 15px 0 15px; /* Корректируем отступы для мобильной рамки */
-        box-sizing: border-box;
-    }
-
-    .deck-img {
-        object-fit: contain; /* Чтобы колоду было видно полностью без обрезки */
-        background-color: #fcfaf7;
-        height: auto;        /* Разрешаем картинке пропорционально уменьшаться */
-        max-height: 280px;   /* Ограничиваем высоту самого фото на телефонах */
-    }
-
-    .deck-info-block {
-        padding: 15px;
-    }
-
-    .deck-card h3 {
-        font-size: 1.3rem;
-        margin-bottom: 10px;
-    }
-
-    .deck-desc {
-        font-size: 0.95rem;
-        text-align: left; /* Сам длинный текст внутри карточки оставляем читаемым */
-        margin-bottom: 15px;
-    }
-
-    .deck-features li {
-        margin-bottom: 6px;
-    }
-
-    .deck-price {
-        font-size: 1.5rem;
-        margin-top: 10px;
-    }
-}
-
-
-
-
-
-
-
 
 
 
@@ -963,19 +896,112 @@ body.no-scroll {
 
 
 
+/* ==========================================================
+   📱 ИДЕАЛЬНАЯ МОБИЛЬНАЯ АДАПТАЦИЯ ДЛЯ ВСЕХ УЛЬЕВ (До 768px)
+   ========================================================== */
+@media (max-width: 768px) {
+    .deck-container {
+        gap: 20px !important;
+        padding: 0 10px !important;
+    }
 
-/* ==========================================================================
-   🐝 ИСПРАВЛЕНИЕ И АДАПТАЦИЯ КАРТОЧЕК УЛЬЕВ (УМНЫЙ ВАРИАНТ)
-   ========================================================================== */
+    /* Сама карточка улья на телефоне */
+    .deck-card {
+        flex-direction: column !important; /* Фото строго сверху, текст снизу */
+        text-align: center !important;
+        flex: 1 1 100% !important;
+        min-width: 0 !important;     /* Убираем 450px, ломавшие экран */
+        max-width: 360px !important;  /* Делаем карточку аккуратной по ширине */
+        margin: 0 auto !important;    /* Центрируем на экране смартфона */
+        height: auto !important;      /* Карточка растет вниз под размер текста */
+        overflow: visible !important;
+    }
 
-/* --- НАСТРОЙКИ ДЛЯ ПК (Компьютеры) --- */
+    /* Блок фотографии (содержит главное фото, иконку и миниатюры) */
+    .deck-img-block {
+        flex: none !important;
+        width: 100% !important;
+        height: auto !important;
+        max-height: none !important;  /* Сбрасываем старый лимит высоты, который резал код */
+        overflow: visible !important; /* Позволяет элементам отображаться корректно */
+        padding: 15px !important;
+        box-sizing: border-box !important;
+        position: relative !important; /* База для выравнивания иконки зума */
+    }
 
-/* Фиксируем блок на ПК */
-.zoom-card-block {
-    position: relative !important;
+    /* Главная большая картинка улья */
+    .deck-img {
+        width: 100% !important;
+        height: auto !important;
+        max-height: 280px !important; /* Ограничиваем, чтобы фото не было гигантским */
+        object-fit: contain !important;
+        background-color: #fcfaf7 !important;
+        border-radius: 12px !important;
+        display: block !important;
+        margin: 0 auto !important;
+    }
+
+    /* Иконка зума ⛶ садится строго на правый нижний угол БОЛЬШОЙ фотографии */
+    .deck-img-block .zoom-hint {
+        position: absolute !important;
+        bottom: 25px !important;
+        right: 25px !important;
+        top: auto !important;
+        left: auto !important;
+        z-index: 10 !important;
+        display: flex !important; /* Гарантируем видимость */
+    }
+
+    /* Контейнер миниатюр (только для карточки №4) */
+    /* На смартфонах они падают из абсолютного режима ПК строго ПОД большую фотку */
+    .zoom-card-block .deck-thumbnails {
+        position: static !important; 
+        width: 100% !important;
+        margin-top: 12px !important;
+        padding: 0 !important;
+        display: flex !important;
+    }
+    
+    /* Сами маленькие миниатюры */
+    .deck-thumb-item {
+        height: 55px !important; /* Удобный размер для пальца */
+    }
+
+    /* Текстовый блок под фото */
+    .deck-info-block {
+        padding: 15px !important;
+        height: auto !important;
+    }
+
+    .deck-card h3 {
+        font-size: 1.3rem !important;
+        margin: 0 0 10px 0 !important;
+    }
+
+    .deck-desc {
+        font-size: 0.95rem !important;
+        text-align: left !important; /* Длинный текст оставляем читаемым */
+        margin-bottom: 15px !important;
+        height: auto !important; /* Текст больше не прячется */
+        overflow: visible !important;
+    }
+
+    .deck-features li {
+        margin-bottom: 6px !important;
+    }
+
+    .deck-price {
+        font-size: 1.5rem !important;
+        margin-top: 10px !important;
+    }
 }
 
-/* На ПК миниатюры изящно лежат поверх нижней части большого фото */
+/* ==========================================================
+   🐝 СТИЛИ ДЛЯ ПК-ВЕРСИИ МИНИАТЮР (Оставляем в самом низу файла)
+   ========================================================== */
+.zoom-card-block {
+    position: relative;
+}
 .zoom-card-block .deck-thumbnails {
     display: flex;
     justify-content: space-between;
@@ -986,8 +1012,6 @@ body.no-scroll {
     left: 20px;
     z-index: 5;
 }
-
-/* Оформляем каждую маленькую миниатюру */
 .deck-thumb-item {
     flex: 1;
     height: 48px;
@@ -998,69 +1022,7 @@ body.no-scroll {
     transition: transform 0.2s, border-color 0.2s;
     box-shadow: 0 4px 10px rgba(0,0,0,0.35);
 }
-
 .deck-thumb-item:hover {
     transform: scale(1.05);
     border-color: #d9a05b;
-}
-
-
-/* --- 📱 МОБИЛЬНАЯ АДАПТАЦИЯ (Смартфоны меньше 768px) --- */
-@media (max-width: 768px) {
-    
-    /* Общие исправления для ВСЕХ карточек ульев на телефоне */
-    .deck-card {
-        flex-direction: column !important; /* Фото сверху, текст снизу */
-        text-align: center !important;
-        flex: 1 1 100% !important;
-        min-width: 0 !important;   /* Убираем 450px, ломавшие экран */
-        max-width: 360px !important; /* Делаем карточку аккуратной по ширине */
-        margin: 0 auto !important;  /* Центрируем на экране смартфона */
-        height: auto !important;    /* Убираем фиксированную высоту, чтобы текст не залезал под фото */
-    }
-
-    /* Исправляем блок фотографии для всех карточек */
-    .deck-img-block {
-        flex: none !important;
-        width: 100% !important;
-        height: auto !important;    /* Разрешаем подстраиваться */
-        max-height: none !important;
-        overflow: visible !important; /* Чтобы иконка подсказки не обрезалась */
-        padding: 15px !important;
-        box-sizing: border-box;
-        position: relative !important; /* Фиксируем положение иконки зума */
-    }
-
-    /* Настройка большой главной картинки на телефонах */
-    .deck-img {
-        width: 100% !important;
-        height: auto !important;
-        max-height: 280px !important; /* Картинка аккуратная и не огромная */
-        object-fit: contain !important;
-        border-radius: 12px;
-    }
-
-    /* ИДЕАЛЬНОЕ положение иконки ⛶ поверх правого нижнего угла БОЛЬШОГО фото */
-    .deck-img-block .zoom-hint {
-        position: absolute !important;
-        bottom: 25px !important; /* Садится ровно на нижний край фотографии */
-        right: 25px !important;  /* Ровно на правый край фотографии */
-        top: auto !important;
-        left: auto !important;
-        z-index: 10 !important;
-    }
-
-    /* УМНЫЙ СПУСК МИНИАТЮР (Только для карточки №4) */
-    /* На смартфонах они прыгают строго ПОД большую фотку и иконку зума */
-    .zoom-card-block .deck-thumbnails {
-        position: static !important; 
-        width: 100% !important;
-        margin-top: 12px !important;
-        padding: 0 !important;
-    }
-    
-    /* Делаем миниатюры чуть крупнее на смартфонах для удобства нажатия пальцем */
-    .deck-thumb-item {
-        height: 55px !important; 
-    }
 }
