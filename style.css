@@ -1100,7 +1100,7 @@ body.no-scroll {
 /* Стили новой кнопки (копия твоей красивой плашки зума) */
 .zoom-hint-v4 {
     position: absolute !important;
-    bottom: 12px !important; /* Отступ строго от низа большой фотографии */
+    bottom: 18px !important; /* Отступ строго от низа большой фотографии */
     right: 12px !important;  /* Отступ строго от правого края большой фотографии */
     top: auto !important;
     left: auto !important;
