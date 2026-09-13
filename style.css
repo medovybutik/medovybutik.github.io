@@ -1093,7 +1093,7 @@ body.no-scroll {
 
     /* 2. Настраиваем размер самих плашечек с цифрами цен справа */
     .price-option-item .option-value {
-        font-size: 0.90rem !important; /* ⬅️ МЕНЯЙ ТУТ: размер цифр внутри плашки */
+        font-size: 0.91rem !important; /* ⬅️ МЕНЯЙ ТУТ: размер цифр внутри плашки */
         padding: 2px 6px !important;    /* ⬅️ ТОЛЩИНА ПЛАШКИ: первая цифра — верх/низ, вторая — право/лево */
         border-radius: 5px !important;  /* Скругление уголков плашки с ценой */
     }
