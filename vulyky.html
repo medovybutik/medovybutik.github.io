@@ -119,7 +119,7 @@
         
         <div class="deck-main-img-wrapper">
             <!-- Главная большая фотография улья -->
-            <img src="foto-vulyky/vul3.jpg" alt="Колода с ракурсами" class="deck-img" 
+            <img src="foto-vulyky/vul6.jpg" alt="Колода с ракурсами" class="deck-img" 
                  onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
             
             <!-- Специальная кнопка зума ДЛЯ КАРТОЧКИ №4 (с новым классом zoom-hint-v4) -->
@@ -127,14 +127,11 @@
         </div>
         
         <!-- Ряд из 3 миниатюр -->
-        <div class="deck-thumbnails">
-            <img src="foto-vulyky/vul4.jpg" alt="Ракурс 1" class="deck-thumb-item" 
-                 onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-                 
+        <div class="deck-thumbnails">       
             <img src="foto-vulyky/vul5.jpg" alt="Ракурс 2" class="deck-thumb-item" 
                  onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
                  
-            <img src="foto-vulyky/vul6.jpg" alt="Ракурс 3" class="deck-thumb-item" 
+            <img src="foto-vulyky/vul4.jpg" alt="Ракурс 3" class="deck-thumb-item" 
                  onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
         </div>
     </div>
@@ -254,7 +251,7 @@
     <div class="lightbox-content">
         <div class="zoom-container">
             <!-- Изначально ставим базовое фото vul3.jpg, скрипт сам заменит его на нужный ракурс при клике -->
-            <img src="foto-vulyky/vul3.jpg" alt="Крупный просмотр" id="zoom-img-vul4" class="zoomable-img"
+            <img src="foto-vulyky/vul6.jpg" alt="Крупный просмотр" id="zoom-img-vul4" class="zoomable-img"
                  onwheel="zoomImage(event, this)" 
                  onmousedown="startDrag(event, this)" 
                  onmousemove="dragImage(event, this)" 
