@@ -746,60 +746,6 @@ body.no-scroll {
 
 
 
-/* ==========================================================
-   🐝 СТИЛИ ДЛЯ МИНИАТЮР В КАРТОЧКАХ УЛЬЕВ
-   ========================================================== */
-
-/* Фиксируем блок на ПК, чтобы карточки с ракурсами и без оставались одинаковой высоты */
-.zoom-card-block {
-    position: relative !important;
-}
-
-/* Контейнер миниатюр (на ПК изящно накладываем поверх нижней части фото) */
-.zoom-card-block .deck-thumbnails {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-    width: calc(100% - 30px); /* Выравниваем по ширине фото с учетом падингов карточки */
-    position: absolute;
-    bottom: 25px; /* Прижимаем к нижней грани фотографии */
-    left: 20px;
-    z-index: 5;
-}
-
-/* Стили для каждой маленькой миниатюры */
-.deck-thumb-item {
-    flex: 1;
-    height: 48px; /* Высота кубиков на ПК */
-    object-fit: cover; /* Превращает фото в ровный аккуратный квадратик */
-    border-radius: 8px;
-    cursor: pointer;
-    border: 2px solid rgba(255, 255, 255, 0.6); /* Светлая рамка, чтобы фото выделялось */
-    transition: transform 0.2s, border-color 0.2s;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
-}
-
-/* Эффект при наведении мышки на миниатюру */
-.deck-thumb-item:hover {
-    transform: scale(1.05);
-    border-color: #d9a05b; /* Твой фирменный медовый цвет */
-}
-
-/* Перестройка миниатюр под мобильные экраны (смартфоны) */
-@media (max-width: 768px) {
-    .zoom-card-block .deck-thumbnails {
-        position: static !important; /* Возвращаем под большую фотку, чтобы ничего не накладывалось */
-        width: 100%;
-        margin-top: 12px;
-        padding: 0 10px;
-        box-sizing: border-box;
-    }
-    
-    .deck-thumb-item {
-        height: 60px; /* На смартфонах делаем кнопочки крупнее, чтобы удобно было нажимать пальцем */
-    }
-}
-
 
 
 
@@ -1012,3 +958,104 @@ body.no-scroll {
 /* ==========================================================
    📱 КУСОЧЕК КОДА ДЛЯ МОБИЛЬНЫХ ТЕЛЕФОНОВ
    ========================================================== */
+
+
+
+
+
+
+   /* ==========================================================================
+   🐝 ФИНАЛЬНЫЕ НАСТРОЙКИ ДЛЯ КАРТОЧЕК УЛЬЕВ (КОМПЬЮТЕРЫ + МОБИЛЬНЫЕ)
+   ========================================================================== */
+
+/* 1. ИСПРАВЛЕНИЕ: Фиксируем высоту блока фото на ПК, чтобы карточки не прыгали по высоте */
+.zoom-card-block {
+    position: relative !important;
+}
+
+/* 2. НАСТРОЙКА ПК: Изящно накладываем миниатюры поверх нижней части большого фото */
+.zoom-card-block .deck-thumbnails {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    width: calc(100% - 30px); /* Выравниваем по ширине фото с учетом внутренних отступов карточки */
+    position: absolute;
+    bottom: 25px; /* Прижимаем к нижней грани фотографии */
+    left: 20px;
+    z-index: 5;
+}
+
+/* 3. СТИЛИ МИНИАТЮР: Оформляем каждую маленькую фотку в аккуратный кликабельный кубик */
+.deck-thumb-item {
+    flex: 1;
+    height: 48px; /* Высота кубиков на ПК */
+    object-fit: cover; /* Превращает фото в ровный аккуратный квадратик */
+    border-radius: 8px;
+    cursor: pointer;
+    border: 2px solid rgba(255, 255, 255, 0.6); /* Светлая рамка, чтобы фото выделялось */
+    transition: transform 0.2s, border-color 0.2s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+/* Эффект при наведении мышки на миниатюру */
+.deck-thumb-item:hover {
+    transform: scale(1.05);
+    border-color: #d9a05b; /* Фирменный медовый цвет */
+}
+
+/* 4. МОБИЛЬНАЯ АДАПТАЦИЯ ДЛЯ СМАРТФОНОВ (Экраны меньше 768px) */
+@media (max-width: 768px) {
+    
+    /* Сбрасываем жесткую ширину карточек ульев, чтобы они сжимались под экран телефона и не вылезали за края */
+    .deck-card {
+        flex-direction: column !important; /* Фото сверху, текст снизу */
+        text-align: center !important;
+        flex: 1 1 100% !important;
+        min-width: 0 !important;  /* Убираем старые 450px, которые ломали верстку */
+        max-width: 400px !important; /* Ограничиваем максимальную ширину на телефоне */
+        margin: 0 auto !important; /* Центрируем карточку ровно посередине экрана телефона */
+    }
+
+    /* Корректируем мобильные отступы вокруг главного фото */
+    .deck-img-block {
+        flex: none !important;
+        width: 100% !important;
+        max-height: 350px !important;
+        overflow: hidden;
+        padding: 15px 15px 0 15px !important;
+        box-sizing: border-box;
+    }
+
+    /* Позволяем главной картинке пропорционально уменьшаться */
+    .deck-img {
+        object-fit: contain !important;
+        background-color: #fcfaf7;
+        height: auto !important;
+        max-height: 280px !important;
+    }
+
+    /* УМНАЯ МОБИЛЬНАЯ ПЕРЕСТРОЙКА МИНИАТЮР */
+    /* Возвращаем их из абсолютного позиционирования ПК-версии строго ПОД большую фотку */
+    .zoom-card-block .deck-thumbnails {
+        position: static !important; 
+        width: 100% !important;
+        margin-top: 12px !important;
+        padding: 0 10px !important;
+        box-sizing: border-box;
+    }
+    
+    /* На смартфонах делаем кнопочки чуть крупнее, чтобы по ним было удобно попадать пальцем */
+    .deck-thumb-item {
+        height: 60px !important; 
+    }
+}
+
+
+/* Выравниваем иконку подсказки зума на телефонах, чтобы она не перекрывала миниатюры */
+@media (max-width: 768px) {
+    .deck-img-block .zoom-hint {
+        bottom: auto !important;
+        top: 240px !important; /* Удерживаем её строго на мобильной высоте большой картинки */
+        right: 25px !important;
+    }
+}
