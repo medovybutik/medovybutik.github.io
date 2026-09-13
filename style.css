@@ -1211,3 +1211,17 @@ body.no-scroll {
         text-align: center;
     }
 }
+
+
+/* Включаем базу позиционирования для иконок зума в обычных товарах */
+.product-card {
+    position: relative !important;
+}
+
+/* Настраиваем красивый отступ для иконки зума внутри обычных товаров на смартфонах */
+@media (max-width: 600px) {
+    .product-card .zoom-hint {
+        bottom: 15px !important; /* Прижимает кнопку аккуратно к нижнему краю фото товара */
+        right: 15px !important;  /* Прижимает к правому краю */
+    }
+}
