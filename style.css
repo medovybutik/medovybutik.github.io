@@ -1213,15 +1213,21 @@ body.no-scroll {
 }
 
 
-/* Включаем базу позиционирования для иконок зума в обычных товарах */
-.product-card {
-    position: relative !important;
-}
 
-/* Настраиваем красивый отступ для иконки зума внутри обычных товаров на смартфонах */
+/* ==========================================================
+   🖼️ ФИКСАЦИЯ ИКОНКИ ЗУМА ДЛЯ КАРТИН, СВЕЧЕЙ И ДОСОК НА МОБИЛЬНОМ
+   ========================================================== */
 @media (max-width: 600px) {
-    .product-card .zoom-hint {
-        bottom: 15px !important; /* Прижимает кнопку аккуратно к нижнему краю фото товара */
-        right: 15px !important;  /* Прижимает к правому краю */
+    /* На смартфонах прижимаем значок строго к рамке фотографии внутри ссылки */
+    .product-card .product-img-wrapper .zoom-hint {
+        position: absolute !important;
+        bottom: 12px !important; /* Отступ ровно от нижнего края холста картины */
+        right: 12px !important;  /* Отступ ровно от правого края холста картины */
+        top: auto !important;
+        left: auto !important;
+        z-index: 10 !important;
+        display: flex !important;
     }
 }
+
+

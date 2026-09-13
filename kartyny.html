@@ -39,8 +39,14 @@
 
 
 
-<!-- 👇 ИСПРАВЛЕНО: Теперь иконка открывает именно лайтбокс 'open-k1' 👇 -->
-<div class="zoom-hint" onclick="document.getElementById('open-k1').classList.add('active')">⛶</div>
+ <!-- 👇 ИДЕАЛЬНЫЙ БЛОК: удерживает картинку, ссылку и иконку зума вместе 👇 -->
+    <div class="product-img-wrapper" style="position: relative; display: block; width: 100%;">
+        <a href="javascript:void(0)" onclick="document.getElementById('open-k1').classList.add('active');">
+            <img src="foto-kartin/k1.jpg" alt="Картина" class="product-img">
+        </a>
+        <div class="zoom-hint">⛶</div>
+    </div>
+    <!-- 👆 КОНЕЦ БЛОКА КАРТИНКИ 👆 -->
 
 
 
