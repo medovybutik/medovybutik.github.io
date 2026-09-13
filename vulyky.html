@@ -112,30 +112,29 @@
 
 
 
-<!-- КАРТОЧКА №4 -->
-<div class="deck-card">
+<!-- КАРТОЧКА №4 (Добавили класс deck-card-with-thumbs) -->
+<div class="deck-card deck-card-with-thumbs">
 
     <div class="deck-img-block zoom-card-block">
-    <!-- 1. Главная большая фотография улья -->
-    <img src="foto-vulyky/vul3.jpg" alt="Колода с ракурсами" class="deck-img" 
-         onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-    
-    <!-- 2. Кнопка иконки зума (теперь она привязана строго к фото) -->
-    <div class="zoom-hint" onclick="document.getElementById('zoom-img-vul4').src=document.querySelector('.zoom-card-block .deck-img').src; document.getElementById('open-vul4').classList.add('active')">⛶</div>
-    
-    <!-- 3. Ряд из 3 миниатюр -->
-    <div class="deck-thumbnails">
-        <img src="foto-vulyky/vul4.jpg" alt="Ракурс 1" class="deck-thumb-item" 
+        <!-- Главная большая фотография улья -->
+        <img src="foto-vulyky/vul3.jpg" alt="Колода с ракурсами" class="deck-img" 
              onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-             
-        <img src="foto-vulyky/vul5.jpg" alt="Ракурс 2" class="deck-thumb-item" 
-             onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
-             
-        <img src="foto-vulyky/vul6.jpg" alt="Ракурс 3" class="deck-thumb-item" 
-             onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
+        
+        <!-- Кнопка иконки зума -->
+        <div class="zoom-hint" onclick="document.getElementById('zoom-img-vul4').src=document.querySelector('.zoom-card-block .deck-img').src; document.getElementById('open-vul4').classList.add('active')">⛶</div>
+        
+        <!-- Ряд из 3 миниатюр -->
+        <div class="deck-thumbnails">
+            <img src="foto-vulyky/vul4.jpg" alt="Ракурс 1" class="deck-thumb-item" 
+                 onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
+                 
+            <img src="foto-vulyky/vul5.jpg" alt="Ракурс 2" class="deck-thumb-item" 
+                 onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
+                 
+            <img src="foto-vulyky/vul6.jpg" alt="Ракурс 3" class="deck-thumb-item" 
+                 onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
+        </div>
     </div>
-</div>
-
 
     <div class="deck-info-block">
         <h3>Матусіна Колода</h3>
@@ -143,13 +142,14 @@
             <p>Оглядова колода з підставкою та ковпаком - повний комплект.</p>
             <ul class="deck-features">
                 <li>- Колода має два оглядові віконця зі склом для спостереження за життям бджіл та треті дверцята для вилучення меду.</li>
-                <li>- У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</li>
+                <li>- У верхній частині розташованы планочки, від яких бджоли відбудовують стільники.</li>
             </ul>
             <p class="product-size">Висота виробу: 1 м 60 см</p>
         </div>
         <div class="deck-price">25 000 ₴</div>
     </div>
 </div>
+
 
 
 
