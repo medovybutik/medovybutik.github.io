@@ -1100,7 +1100,7 @@ body.no-scroll {
 /* Стили новой кнопки (копия твоей красивой плашки зума) */
 .zoom-hint-v4 {
     position: absolute !important;
-    bottom: 18px !important; /* Отступ строго от низа большой фотографии */
+    bottom: 19px !important; /* Отступ строго от низа большой фотографии */
     right: 12px !important;  /* Отступ строго от правого края большой фотографии */
     top: auto !important;
     left: auto !important;
@@ -1129,5 +1129,65 @@ body.no-scroll {
 @media (min-width: 769px) {
     .zoom-hint-v4 {
         display: none !important;
+    }
+}
+
+
+
+/* ==========================================================
+   🍯 СТИЛИ ДЛЯ СПИСКА ОПЦИЙ И ЦЕН В УЛЬЯХ
+   ========================================================== */
+
+/* Контейнер для списка цен */
+.deck-price-options {
+    background-color: rgba(217, 160, 91, 0.08); /* Очень нежная медовая подложка */
+    border-left: 3px solid #d9a05b; /* Красивая фирменная полоса слева */
+    padding: 10px 14px;
+    border-radius: 4px 8px 8px 4px;
+    margin: 15px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px; /* Расстояние между строчками цен */
+}
+
+/* Каждая строчка с ценой */
+.price-option-item {
+    display: flex;
+    justify-content: space-between; /* Название слева, цена строго справа */
+    align-items: center;
+    font-size: 1.05rem;
+    color: #33251c;
+}
+
+/* Название комплектации */
+.price-option-item .option-name {
+    font-weight: normal;
+    text-align: left;
+}
+
+/* Сама цена справа */
+.price-option-item .option-value {
+    font-weight: bold;
+    color: #33251c; /* Делаем цену аккуратной темной, чтобы не спорила с главной */
+    background-color: rgba(217, 160, 91, 0.15); /* Плашечка для цены */
+    padding: 2px 8px;
+    border-radius: 6px;
+}
+
+/* Блок с размером */
+.deck-meta {
+    margin-top: 5px;
+    text-align: left;
+}
+
+/* Корректировка для мобилок: центрируем блок цен на телефонах */
+@media (max-width: 768px) {
+    .deck-price-options {
+        max-width: 280px;
+        width: 100%;
+        margin: 15px auto; /* Центрируем по центру карточки смартфона */
+    }
+    .deck-meta {
+        text-align: center;
     }
 }
