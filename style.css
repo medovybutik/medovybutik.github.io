@@ -817,6 +817,12 @@ body.no-scroll {
     .deck-card {
         flex-direction: column; /* На телефоне: фото сверху, текст снизу */
         text-align: center; /* Центрируем заголовки и цену */
+        
+       
+        flex: 1 1 100%;
+        min-width: 0 !important;  /* Сбрасываем жесткое ограничение в 450px, чтобы карточка сжималась под экран */
+        max-width: 400px;         /* Ограничиваем ширину, чтобы на больших смартфонах карточка не выглядела слишком огромной */
+        margin: 0 auto;           /* Центрируем карточку ровно посередине экрана телефона */
     }
 
     .deck-img-block {
@@ -824,11 +830,15 @@ body.no-scroll {
         width: 100%;
         max-height: 350px; /* Чтобы высокое фото не занимало весь экран телефона */
         overflow: hidden;
+        padding: 15px 15px 0 15px; /* Корректируем отступы для мобильной рамки */
+        box-sizing: border-box;
     }
 
     .deck-img {
         object-fit: contain; /* Чтобы колоду было видно полностью без обрезки */
         background-color: #fcfaf7;
+        height: auto;        /* Разрешаем картинке пропорционально уменьшаться */
+        max-height: 280px;   /* Ограничиваем высоту самого фото на телефонах */
     }
 
     .deck-info-block {
@@ -855,6 +865,7 @@ body.no-scroll {
         margin-top: 10px;
     }
 }
+
 
 
 
