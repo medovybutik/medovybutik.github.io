@@ -638,12 +638,16 @@ body.no-scroll {
     box-sizing: border-box;
     text-align: left; 
 
-    /* 👇 КРИТИЧЕСКИЕ ИЗМЕНЕНИЯ ДЛЯ ВЫРАВНИВАНИЯ ПО 2 В РЯД 👇 */
-    flex: 1 1 calc(50% - 25px); /* Говорим браузеру: "Занимай ровно половину строки с учетом отступа" */
-    min-width: 450px;           /* Минимальная ширина, чтобы карточка не сжималась слишком сильно */
-    max-width: 870px;           /* Максимальная ширина, чтобы карточки не растягивались на весь экран, если их всего две */
-    margin: 0;                  /* Сбрасываем центрирование одиночной карточки */
+    
+    flex: 1 1 calc(50% - 25px); 
+    min-width: 450px;          
+    max-width: 870px;           
+    margin: 0;                 
+    
+   
+    height: 410px !important;   
 }
+
 
 /* Блок для фотографии внутри карточки */
 .deck-img-block {
@@ -654,6 +658,8 @@ body.no-scroll {
     align-items: center;   
     justify-content: center;
     padding: 20px 10px 20px 20px; 
+
+
 }
 
 
@@ -1024,7 +1030,7 @@ body.no-scroll {
     }
 
 
-   
+  
   
 
     .deck-card .product-size {
@@ -1053,17 +1059,6 @@ body.no-scroll {
 
 
 
-/* ==========================================================
-   🎯 ЖЕСТКАЯ ФИКСАЦИЯ КНОПКИ ЗУМА ДЛЯ КАРТОЧКИ №4
-   ========================================================== */
-
-/* Базовый контейнер для большой фотографии */
-.deck-main-img-wrapper {
-    position: relative !important;
-    width: 200px !important;
-    height: 280px !important;
-    margin: 0 auto !important;
-}
 
 
 
@@ -1132,24 +1127,37 @@ body.no-scroll {
 
 
 
-/*   ДОБАВИТЬ В САМЫЙ КОНЕЦ ФАЙЛА */
+/* ==========================================================
+   🎯 ИСПРАВЛЕНИЕ РАЗМЕРОВ ФОТО И НАСТРОЙКА КНОПКИ ЗУМА
+   ========================================================== */
 
-/* 1. Универсальный стиль для кнопки зума на всех товарах сайта */
-/* Кнопка чуть меньше и слегка приподнята в своем углу */
+/* 1. На компьютерах (ПК) возвращаем жесткую высоту, чтобы все фото встали в один уровень */
+.deck-main-img-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    height: 320px !important; /* 🌟 ВОЗВРАЩАЕМ 320px: теперь все фото на ПК будут одинаковыми по высоте */
+    display: block !important;
+}
+
+/* На ПК заставляем саму картинку аккуратно заполнять эти 320px без искажений */
+.deck-main-img-wrapper .deck-img {
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* 2. Универсальный стиль для кнопки зума */
 .zoom-hint {
     position: absolute !important;
-    bottom: 32px !important; /* 🌟 БЫЛО 12px: сделали больше, чтобы кнопка аккуратно приподнялась повыше */
-    right: 12px !important;  /* Оставили привязку к правому краю */
+    bottom: 25px !important; /* Высота кнопки на телефонах */
+    right: 12px !important;  
     top: auto !important;
     left: auto !important;
     
     background-color: rgba(0, 0, 0, 0.65) !important;
     color: #ffffff !important;
-    
-    /* 🌟 УМЕНЬШИЛИ РАЗМЕР (как вы и хотели): */
-    font-size: 0.7rem !important;  /* Было 0.8rem (сам значок стал аккуратнее) */
-    padding: 4px 8px !important;   /* Было 6px 12px (чёрная плашка стала компактнее) */
-    border-radius: 15px !important; /* Скругление под новый размер */
+    font-size: 0.7rem !important;  
+    padding: 4px 8px !important;   
+    border-radius: 15px !important; 
     
     cursor: pointer !important;
     display: flex !important;
@@ -1160,19 +1168,38 @@ body.no-scroll {
     z-index: 99 !important; 
     
     user-select: none;
+    -webkit-user-drag: none;
     -webkit-user-select: none;
 }
 
-
-/* Эффект мягкого нажатия пальцем на телефоне */
 .zoom-hint:active {
     background-color: rgba(0, 0, 0, 0.85) !important;
     transform: scale(0.95) !important;
 }
 
-/* Скрываем кнопку зума на больших экранах (компьютерах), так как там работает клик по фото */
+/* На больших экранах (компьютерах) скрываем мобильную кнопку зума */
 @media (min-width: 769px) {
     .zoom-hint {
         display: none !important;
+    }
+}
+
+/* 3. Ограничения ТОЛЬКО для mobile (чтобы улей не растягивался вширь) */
+@media (max-width: 768px) {
+    .deck-main-img-wrapper {
+        width: 200px !important;       
+        height: min-content !important; /* На телефонах обертка сожмется под фото */
+        margin: 0 auto !important;     
+    }
+    
+    /* На телефонах возвращаем картинке улья ее мобильные пропорции */
+    .deck-main-img-wrapper .deck-img {
+        width: 200px !important;
+        height: 270px !important;
+        object-fit: cover !important;
+    }
+    
+    .zoom-hint {
+        bottom: 25px !important; /* Управляйте высотой кнопки на мобилке прямо здесь */
     }
 }

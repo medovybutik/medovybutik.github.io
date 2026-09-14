@@ -66,53 +66,61 @@
 
 
  <!-- КАРТОЧКА №2 (VUL2) — ОНА ИДЕТ СРАЗУ СЛЕДОМ -->
-    <div class="deck-card">
-        <div class="deck-img-block">
-            <!-- Ссылка открывает лайтбокс именно для второго улика -->
+    
+<div class="deck-card">
+    <div class="deck-img-block">
+        <!-- Обертка на месте, всё супер -->
+        <div class="deck-main-img-wrapper">
             <a href="javascript:void(0)" onclick="document.getElementById('open-vul2').classList.add('active');">
-                <img src="foto-vulyky/vul2.jpg" class="deck-img" alt="Колода для душі">
+                <img src="foto-vulyky/vul2.jpg" class="deck-img" alt="Колода з дверцятами">
             </a>
-            <div class="zoom-hint">⛶</div>
+            <div class="zoom-hint" onclick="document.getElementById('open-vul2').classList.add('active');">⛶</div>
         </div>
+    </div> 
 
-       <div class="deck-info-block">
-            <h3>Колода з дверцятами</h3>
-            <div class="deck-desc">
-                <p>Колода з одними дверцятами на дерев’яній підставці.</p>
-                <ul class="deck-features">
-                    <li>✔ У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</li>
-                </ul>
-                <p class="product-size">Висота виробу: 2 м 50 см</p>
-            </div>
-            <div class="deck-price">30 000 ₴</div>
+    <div class="deck-info-block">
+        <h3>Колода з дверцятами</h3>
+        <div class="deck-desc">
+            <p>Колода з одними дверцятами на дерев’яній підставці.</p>
+            <ul class="deck-features">
+                <li>✔ У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</li>
+            </ul>
+            <p class="product-size">Висота виробу: 2 м 50 см</p>
         </div>
+        <div class="deck-price">30 000 ₴</div>
     </div>
+</div>
 
 
 
+
+   
     <!-- КАРТОЧКА №3 -->
-    <div class="deck-card">
-        <div class="deck-img-block">
-
+<div class="deck-card">
+    <div class="deck-img-block">
+        <div class="deck-main-img-wrapper">
             <a href="javascript:void(0)" onclick="document.getElementById('open-vul3').classList.add('active');">
-                <img src="foto-vulyky/vul3.jpg" class="deck-img" alt="Колода для душі">
+                <img src="foto-vulyky/vul3.jpg" class="deck-img" alt="Матусіна Колода">
             </a>
-            <div class="zoom-hint">⛶</div>
+           
+            <div class="zoom-hint" onclick="document.getElementById('open-vul3').classList.add('active');">⛶</div>
         </div>
+    </div> 
 
-       <div class="deck-info-block">
-            <h3>Матусіна Колода</h3>
-            <div class="deck-desc">
-                <p>Оглядова колода з підставкою та ковпаком - повний комплект.</p>
-                <ul class="deck-features">
-                    <li>✔ Колода має два оглядові віконця зі склом для спостереження за життям бджіл та треті дверцята для вилучення меду.</li>
-                    <li>✔ У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</li>
-                </ul>
-                <p class="product-size">Висота виробу: 1 м 60 см</p>
-            </div>
-            <div class="deck-price">25 000 ₴</div>
+    <div class="deck-info-block">
+        <h3>Матусіна Колода</h3>
+        <div class="deck-desc">
+            <p>Оглядова колода з підставкою та ковпаком - повний комплект.</p>
+            <ul class="deck-features">
+                <li>✔ Колода має два оглядові віконця зі склом для спостереження за життям бджіл та треті дверцята для вилучення меду.</li>
+                <li>✔ У верхній частині розташовані планочки, від яких бджоли відбудовують стільники.</li>
+            </ul>
+            <p class="product-size">Висота виробу: 1 м 60 см</p>
         </div>
+        <div class="deck-price">25 000 ₴</div>
     </div>
+</div>
+
 
 
 
@@ -121,17 +129,16 @@
 <div class="deck-card deck-card-with-thumbs">
 
     <div class="deck-img-block zoom-card-block">
-        
         <div class="deck-main-img-wrapper">
             <!-- Главная большая фотография улья -->
             <img src="foto-vulyky/vul6.jpg" alt="Колода с ракурсами" class="deck-img" 
                  onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
             
-            <!-- Специальная кнопка зума ДЛЯ КАРТОЧКИ №4 (с новым классом zoom-hint-v4) -->
-            <div class="zoom-hint-v4" onclick="document.getElementById('zoom-img-vul4').src=document.querySelector('.zoom-card-block .deck-img').src; document.getElementById('open-vul4').classList.add('active')">⛶</div>
+            
+            <div class="zoom-hint" onclick="document.getElementById('zoom-img-vul4').src=document.querySelector('.zoom-card-block .deck-img').src; document.getElementById('open-vul4').classList.add('active')">⛶</div>
         </div>
         
-        <!-- Ряд из 3 миниатюр -->
+        <!-- Ряд из миниатюр -->
         <div class="deck-thumbnails">       
             <img src="foto-vulyky/vul5.jpg" alt="Ракурс 2" class="deck-thumb-item" 
                  onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
@@ -139,47 +146,42 @@
             <img src="foto-vulyky/vul4.jpg" alt="Ракурс 3" class="deck-thumb-item" 
                  onclick="document.getElementById('zoom-img-vul4').src=this.src; document.getElementById('open-vul4').classList.add('active')">
         </div>
-    </div>
+    </div> 
 
-   <div class="deck-info-block">
-    <h3>Колода-Бар</h3>
-    
-    <div class="deck-desc">
-        <p>Стильне та практичне рішення для зберігання напоїв.</p>
-        <ul class="deck-features">
-            <li>✔ Бокали та вино - у подарунок</li>
-        </ul>
-    </div>
+    <div class="deck-info-block">
+        <h3>Колода-Бар</h3>
+        
+        
+        <div class="deck-desc">
+            <p>Стильне та практичне рішення для зберігання напоїв.</p>
+            <ul class="deck-features">
+                <li>✔ Бокали та вино - у подарунок</li>
+            </ul>
+            <p class="product-size">Висота виробу:...</p>
+        </div>
 
-    <!-- Размеры вынесли отдельно от описания -->
-    <div class="deck-desc">
-        <p class="product-size">Висота виробу:...</p>
+        <!-- КРАСИВЫЙ БЛОК ДЛЯ НЕСКОЛЬКИХ ЦЕН -->
+        <div class="deck-price-options">
+            <div class="price-option-item">
+                <span class="option-name">Без ковпака</span>
+                <span class="option-value">4 500 ₴</span>
             </div>
-
-    <!-- 👇 КРАСИВЫЙ БЛОК ДЛЯ НЕСКОЛЬКИХ ЦЕН 👇 -->
-    <div class="deck-price-options">
-        <div class="price-option-item">
-            <span class="option-name">Без ковпака</span>
-            <span class="option-value">4 500 ₴</span>
+            <div class="price-option-item">
+                <span class="option-name">З ковпаком</span>
+                <span class="option-value">6 500 ₴</span>
+            </div>
+            <div class="price-option-item">
+                <span class="option-name">Дерев’яна підставка</span>
+                <span class="option-value">1 000 ₴</span>
+            </div>
+            <div class="price-option-item">
+                <span class="option-name">Скло всередині</span>
+                <span class="option-value">500 ₴</span>
+            </div>
         </div>
-        <div class="price-option-item">
-            <span class="option-name">З ковпаком</span>
-            <span class="option-value">6 500 ₴</span>
-        </div>
-        <div class="price-option-item">
-            <span class="option-name">Дерев’яна підставка</span>
-            <span class="option-value">1 000 ₴</span>
-        </div>
-        <div class="price-option-item">
-            <span class="option-name">Скло всередині</span>
-            <span class="option-value">500 ₴</span>
-        </div>
-    </div>
-
-
-
-
+    </div> 
 </div>
+
 
 
 
