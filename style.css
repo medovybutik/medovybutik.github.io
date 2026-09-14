@@ -1024,25 +1024,8 @@ body.no-scroll {
     }
 
 
-    /* Новый контейнер-оболочка для большой картинки на смартфонах */
-  .deck-main-img-wrapper {
-    position: relative !important; 
-    width: 200px !important;       
-    height: min-content !important; /* 🌟 ТЕПЕРЬ ОБЕРТКА БУДЕТ СТРОГО ПО ВЫСОТЕ ФОТОГРАФИИ */
-    margin: 0 auto !important;     
-    display: block !important;      /* Чтобы правильно считались размеры */
-}
-
-    /* ИДЕАЛЬНОЕ положение иконки ⛶ на телефонах: теперь она отсчитывает пиксели строго от краев БОЛЬШОГО фото */
-    .deck-img-block .deck-main-img-wrapper .zoom-hint {
-        position: absolute !important;
-        bottom: 10px !important; /* Отступаем всего 10px от нижнего края большой фотографии */
-        right: 10px !important;  /* Отступаем всего 10px от правого края большой фотографии */
-        top: auto !important;
-        left: auto !important;
-        z-index: 10 !important;
-    }
-
+   
+  
 
     .deck-card .product-size {
         font-size: 0.82rem !important; /* ⬅️ МЕНЯЙ ТУТ: размер букв на смартфонах */
