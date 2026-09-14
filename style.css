@@ -1151,19 +1151,21 @@ body.no-scroll {
 /*   ДОБАВИТЬ В САМЫЙ КОНЕЦ ФАЙЛА */
 
 /* 1. Универсальный стиль для кнопки зума на всех товарах сайта */
+/* Кнопка чуть меньше и слегка приподнята в своем углу */
 .zoom-hint {
     position: absolute !important;
-    bottom: 12px !important; /* Отступ строго от нижнего края большой фотографии */
-    right: 12px !important;  /* Отступ строго от правого края большой фотографии */
+    bottom: 22px !important; /* 🌟 БЫЛО 12px: сделали больше, чтобы кнопка аккуратно приподнялась повыше */
+    right: 12px !important;  /* Оставили привязку к правому краю */
     top: auto !important;
     left: auto !important;
     
     background-color: rgba(0, 0, 0, 0.65) !important;
     color: #ffffff !important;
-    font-size: 0.8rem !important;
-    font-weight: bold !important;
-    padding: 6px 12px !important;
-    border-radius: 20px !important;
+    
+    /* 🌟 УМЕНЬШИЛИ РАЗМЕР (как вы и хотели): */
+    font-size: 0.7rem !important;  /* Было 0.8rem (сам значок стал аккуратнее) */
+    padding: 4px 8px !important;   /* Было 6px 12px (чёрная плашка стала компактнее) */
+    border-radius: 15px !important; /* Скругление под новый размер */
     
     cursor: pointer !important;
     display: flex !important;
@@ -1171,11 +1173,12 @@ body.no-scroll {
     justify-content: center !important;
     
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3) !important;
-    z-index: 99 !important; /* Гарантирует, что кнопка всегда будет выше картинок и текста */
+    z-index: 99 !important; 
     
     user-select: none;
     -webkit-user-select: none;
 }
+
 
 /* Эффект мягкого нажатия пальцем на телефоне */
 .zoom-hint:active {
