@@ -963,7 +963,7 @@ body.no-scroll {
         height: auto !important;       
         min-height: 0 !important;
         max-height: none !important;
-        padding: 15px 15px 5px 15px !important; 
+        padding: 20px 15px 5px 15px !important; 
         box-sizing: border-box !important;
         position: relative !important;  
         display: flex !important;       /* Переключаем в flex режим, чтобы центрировать узкую картинку */
@@ -1006,7 +1006,7 @@ body.no-scroll {
 
     .deck-card h3 {
         font-size: 1.1rem !important;
-        margin: 5px 0 10px 0 !important;
+        margin: 5px 0 5px 0 !important;
         text-align: center !important;
     }
 
@@ -1200,6 +1200,6 @@ body.no-scroll {
     }
     
     .zoom-hint {
-        bottom: 25px !important; /* Управляйте высотой кнопки на мобилке прямо здесь */
+        bottom: 15px !important; /* Управляйте высотой кнопки на мобилке прямо здесь */
     }
 }
