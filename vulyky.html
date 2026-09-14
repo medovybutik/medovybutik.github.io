@@ -33,14 +33,19 @@
 <div class="deck-container">
 
     <!-- КАРТОЧКА №1 (VUL1) -->
-    <div class="deck-card">
-        <div class="deck-img-block">
+   <div class="deck-card">
+    <div class="deck-img-block">
+        <!-- 🌟 НОВАЯ ОБЯЗАТЕЛЬНАЯ ОБЛОЧКА ДЛЯ ИСПРАВЛЕНИЯ ЗУМА -->
+        <div class="deck-main-img-wrapper">
             <!-- Ссылка открывает лайтбокс именно для первого улика -->
             <a href="javascript:void(0)" onclick="document.getElementById('open-vul1').classList.add('active');">
                 <img src="foto-vulyky/vul1.jpg" class="deck-img" alt="Колода для душі">
             </a>
-            <div class="zoom-hint">⛶</div>
+            <!-- Кнопка теперь находится внутри оболочки вместе с фото -->
+            <div class="zoom-hint" onclick="document.getElementById('open-vul1').classList.add('active');">⛶</div>
         </div>
+    </div>
+
 
         <div class="deck-info-block">
             <h3>Колода для душі</h3>
