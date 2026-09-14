@@ -1207,20 +1207,21 @@ body.no-scroll {
 
 
 
-/* ✅ ДОБАВЬТЕ ЭТОТ БЛОК В САМЫЙ КОНЕЦ CSS-ФАЙЛА: */
+/* ✅ ЗАМЕНИТЕ БЛОК В САМОМ КОНЦЕ CSS-ФАЙЛА НА ЭТОТ: */
 
-/* Исправление отображения картинок на ПК для обычных товаров (картины, свечи...) */
+/* Сбрасываем влияние стилей ульев на обычные товары (картины, свечи...) */
 @media (min-width: 769px) {
     .product-img-container .deck-main-img-wrapper {
         width: 100% !important;
-        height: 320px !important; /* Возвращаем стандартную высоту для карточек товаров */
+        height: auto !important; /* Убираем жесткие 320px от ульев */
         display: block !important;
     }
     
     .product-img-container .deck-main-img-wrapper .product-img {
         width: 100% !important;
-        height: 100% !important;
-        object-fit: cover !important; /* Картинка красиво заполнит карточку без перекосов */
+        height: 320px !important; /* Возвращаем родную высоту картинок, как у вас было в файле */
+        object-fit: cover !important; /* Возвращаем родное кадрирование, как у вас было изначально */
         border-radius: 10px !important;
     }
 }
+
