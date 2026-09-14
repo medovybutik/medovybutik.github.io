@@ -1006,7 +1006,7 @@ body.no-scroll {
 
     .deck-card h3 {
         font-size: 1.1rem !important;
-        margin: 5px 0 5px 0 !important;
+        margin: 5px 0 2px 0 !important;
         text-align: center !important;
     }
 
@@ -1200,6 +1200,6 @@ body.no-scroll {
     }
     
     .zoom-hint {
-        bottom: 15px !important; /* Управляйте высотой кнопки на мобилке прямо здесь */
+        bottom: 8px !important; /* Управляйте высотой кнопки на мобилке прямо здесь */
     }
 }
