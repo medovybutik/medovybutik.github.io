@@ -1203,3 +1203,24 @@ body.no-scroll {
         bottom: 8px !important; /* Управляйте высотой кнопки на мобилке прямо здесь */
     }
 }
+
+
+
+
+/* ✅ ДОБАВЬТЕ ЭТОТ БЛОК В САМЫЙ КОНЕЦ CSS-ФАЙЛА: */
+
+/* Исправление отображения картинок на ПК для обычных товаров (картины, свечи...) */
+@media (min-width: 769px) {
+    .product-img-container .deck-main-img-wrapper {
+        width: 100% !important;
+        height: 320px !important; /* Возвращаем стандартную высоту для карточек товаров */
+        display: block !important;
+    }
+    
+    .product-img-container .deck-main-img-wrapper .product-img {
+        width: 100% !important;
+        height: 100% !important;
+        object-fit: cover !important; /* Картинка красиво заполнит карточку без перекосов */
+        border-radius: 10px !important;
+    }
+}
