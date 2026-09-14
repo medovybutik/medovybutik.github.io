@@ -1025,12 +1025,13 @@ body.no-scroll {
 
 
     /* Новый контейнер-оболочка для большой картинки на смартфонах */
-    .deck-main-img-wrapper {
-        position: relative !important; /* Делаем этот блок главной базой для кнопки ⛶ */
-        width: 200px !important;       /* Ширина в точности равна ширине большой картинки */
-        height: 280px !important;      /* Высота в точности равна высоте большой картинки */
-        margin: 0 auto !important;     /* Центрируем блок по центру белой карточки */
-    }
+  .deck-main-img-wrapper {
+    position: relative !important; 
+    width: 200px !important;       
+    height: min-content !important; /* 🌟 ТЕПЕРЬ ОБЕРТКА БУДЕТ СТРОГО ПО ВЫСОТЕ ФОТОГРАФИИ */
+    margin: 0 auto !important;     
+    display: block !important;      /* Чтобы правильно считались размеры */
+}
 
     /* ИДЕАЛЬНОЕ положение иконки ⛶ на телефонах: теперь она отсчитывает пиксели строго от краев БОЛЬШОГО фото */
     .deck-img-block .deck-main-img-wrapper .zoom-hint {
@@ -1154,7 +1155,7 @@ body.no-scroll {
 /* Кнопка чуть меньше и слегка приподнята в своем углу */
 .zoom-hint {
     position: absolute !important;
-    bottom: 72px !important; /* 🌟 БЫЛО 12px: сделали больше, чтобы кнопка аккуратно приподнялась повыше */
+    bottom: 32px !important; /* 🌟 БЫЛО 12px: сделали больше, чтобы кнопка аккуратно приподнялась повыше */
     right: 12px !important;  /* Оставили привязку к правому краю */
     top: auto !important;
     left: auto !important;
