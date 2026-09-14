@@ -35,22 +35,26 @@
 
            <!-- КАРТОЧКА 1 -->
 <div class="product-card">
-    <!-- Навесили событие клика: при нажатии на картинку откроется окно с id "open-k1" -->
-
-
-
- <!-- 👇 ИДЕАЛЬНЫЙ БЛОК: удерживает картинку, ссылку и иконку зума вместе 👇 -->
-    <div class="product-img-wrapper" style="position: relative; display: block; width: 100%;">
-        <a href="javascript:void(0)" onclick="document.getElementById('open-k1').classList.add('active');">
-            <img src="foto-kartin/k1.jpg" alt="Картина" class="product-img">
-        </a>
-        <div class="zoom-hint">⛶</div>
-    </div>
-    <!-- 👆 КОНЕЦ БЛОКА КАРТИНКИ 👆 -->
-
-
-
     
+    
+     <!-- 🌟 ШАГ 1: Добавили контейнеры-оболочки вокруг фото, чтобы кнопка встала ровно -->
+    <div class="product-img-container">
+        <div class="deck-main-img-wrapper">
+            
+            <!-- 🌟 ШАГ 2: Завернули картинку в ссылку (как в ульях) и убрали onclick из самой картинки -->
+            <a href="javascript:void(0)" onclick="document.getElementById('open-k1').classList.add('active')">
+                <img src="foto-kartin/k1.jpg" alt="«Вечірній храм»" class="product-img">
+            </a>
+            
+            <!-- 🌟 ШАГ 3: Вставили нашу кнопку зума, указав ID её лайтбокса (open-k1) -->
+            <div class="zoom-hint" onclick="document.getElementById('open-k1').classList.add('active')">⛶</div>
+            
+        </div>
+    </div> <!-- Закрыли оба контейнера -->
+
+
+
+
     <h3>«Вечірній храм»</h3>
     <p class="product-desc">мальовничий пейзаж із давньою церквою у променях вечірнього сонця.</p>
     <p class="product-size">Розмір полотна: 480 х 410 мм</p>
