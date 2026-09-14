@@ -1154,7 +1154,7 @@ body.no-scroll {
 /* Кнопка чуть меньше и слегка приподнята в своем углу */
 .zoom-hint {
     position: absolute !important;
-    bottom: 22px !important; /* 🌟 БЫЛО 12px: сделали больше, чтобы кнопка аккуратно приподнялась повыше */
+    bottom: 32px !important; /* 🌟 БЫЛО 12px: сделали больше, чтобы кнопка аккуратно приподнялась повыше */
     right: 12px !important;  /* Оставили привязку к правому краю */
     top: auto !important;
     left: auto !important;
