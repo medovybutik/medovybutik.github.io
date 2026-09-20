@@ -1207,18 +1207,35 @@ body.no-scroll {
 
 
 
-/* Настройка обертки зума для обычных товаров на мобилках (Свечи, Картины, Мед) */
+/* ==========================================================
+   🎯 КНОПКА ЗУМА ДЛЯ ОБЫЧНЫХ ТОВАРОВ (Свечи, Картины, Мед)
+   ========================================================== */
+
+/* Создаем контейнер-ориентир для кнопки, который не портит размеры фото */
+.product-img-wrapper {
+    position: relative !important;
+    width: 100% !important;
+    display: block !important;
+}
+
+/* На телефонах позиционируем кнопку внутри маленькой карточки */
 @media (max-width: 600px) {
-    .product-card .deck-main-img-wrapper {
-        width: 100% !important;
-        height: auto !important;
-        position: relative !important;
-    }
-    
-    /* Сдвигаем кнопку чуть выше, чтобы она красиво смотрелась на квадратных фото */
-    .product-card .zoom-hint {
-        bottom: 12px !important;
-        right: 12px !important;
+    .product-img-wrapper .zoom-hint {
+        display: flex !important; /* Показываем кнопку на мобильных */
+        position: absolute !important;
+        
+        /* Управляем положением кнопки (настраивайте эти цифры под себя) */
+        bottom: 8px !important;   /* Отступ снизу от края фотографии */
+        right: 8px !important;    /* Отступ справа от края фотографии */
+        
+        /* Стили самой кнопки (копия вашей из ульев) */
+        background-color: rgba(0, 0, 0, 0.65) !important;
+        color: #ffffff !important;
+        font-size: 0.7rem !important;  
+        padding: 4px 8px !important;   
+        border-radius: 15px !important; 
+        z-index: 99 !important;
+        user-select: none;
     }
 }
 
