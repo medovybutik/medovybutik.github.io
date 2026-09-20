@@ -1207,21 +1207,18 @@ body.no-scroll {
 
 
 
-/* ✅ ЗАМЕНИТЕ БЛОК В САМОМ КОНЦЕ CSS-ФАЙЛА НА ЭТОТ: */
-
-/* Сбрасываем влияние стилей ульев на обычные товары (картины, свечи...) */
-@media (min-width: 769px) {
-    .product-img-container .deck-main-img-wrapper {
+/* Настройка обертки зума для обычных товаров на мобилках (Свечи, Картины, Мед) */
+@media (max-width: 600px) {
+    .product-card .deck-main-img-wrapper {
         width: 100% !important;
-        height: auto !important; /* Убираем жесткие 320px от ульев */
-        display: block !important;
+        height: auto !important;
+        position: relative !important;
     }
     
-    .product-img-container .deck-main-img-wrapper .product-img {
-        width: 100% !important;
-        height: 320px !important; /* Возвращаем родную высоту картинок, как у вас было в файле */
-        object-fit: cover !important; /* Возвращаем родное кадрирование, как у вас было изначально */
-        border-radius: 10px !important;
+    /* Сдвигаем кнопку чуть выше, чтобы она красиво смотрелась на квадратных фото */
+    .product-card .zoom-hint {
+        bottom: 12px !important;
+        right: 12px !important;
     }
 }
 
