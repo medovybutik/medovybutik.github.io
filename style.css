@@ -1239,3 +1239,13 @@ body.no-scroll {
     }
 }
 
+/* Финальное исправление для сетки обычных товаров на смартфонах */
+@media (max-width: 600px) {
+    /* Заставляем обертку картинки подстраиваться под сетку "2 в ряд" */
+    .product-card .product-img-wrapper {
+        width: 100% !important;
+        height: auto !important;
+        position: relative !important;
+        display: block !important;
+    }
+}
