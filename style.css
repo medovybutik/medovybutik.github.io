@@ -1241,7 +1241,12 @@ body.no-scroll {
 
 /* Финальное исправление для сетки обычных товаров на смартфонах */
 @media (max-width: 600px) {
-    /* Заставляем обертку картинки подстраиваться под сетку "2 в ряд" */
+    .product-card {
+        display: flex !important;
+        flex-direction: column !important;
+        width: calc(50% - 6px) !important; /* Принудительно возвращаем 2 в ряд */
+    }
+    
     .product-card .product-img-wrapper {
         width: 100% !important;
         height: auto !important;
