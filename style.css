@@ -1153,7 +1153,7 @@ body.no-scroll {
     top: auto !important;
     left: auto !important;
     
-    background-color: rgba(0, 0, 0, 0.2) !important;
+    background-color: rgba(0, 0, 0, 0.25) !important;
     color: #ffffff !important;
     font-size: 0.7rem !important;  
     padding: 4px 8px !important;   
@@ -1229,7 +1229,7 @@ body.no-scroll {
         right: 8px !important;    /* Отступ справа от края фотографии */
         
         /* Стили самой кнопки (копия вашей из ульев) */
-        background-color: rgba(0, 0, 0, 0.65) !important;
+        background-color: rgba(0, 0, 0, 0.25) !important;
         color: #ffffff !important;
         font-size: 0.7rem !important;  
         padding: 4px 8px !important;   
