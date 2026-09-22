@@ -1153,7 +1153,7 @@ body.no-scroll {
     top: auto !important;
     left: auto !important;
     
-    background-color: rgba(0, 0, 0, 0.65) !important;
+    background-color: rgba(0, 0, 0, 0.35) !important;
     color: #ffffff !important;
     font-size: 0.7rem !important;  
     padding: 4px 8px !important;   
